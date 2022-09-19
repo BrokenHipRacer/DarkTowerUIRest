@@ -29,7 +29,7 @@ mongoose.connection.on("open", function() {
 
 app.use(helmet())
 
-app.use(require("./routes/index"))
+app.use(require("./src/routes/index"))
 
 app.use("/assets", express.static(path.join(__dirname, "..", "..", "assets")))
 

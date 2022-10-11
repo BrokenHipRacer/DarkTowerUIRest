@@ -3,7 +3,6 @@ const helmet = require("helmet")
 const mongoose = require("mongoose")
 const dotenv = require("dotenv")
 const path = require("path")
-const cors = require("cors")
 
 dotenv.config()
 
@@ -27,8 +26,6 @@ mongoose.connection.on("error", function(error) {
 mongoose.connection.on("open", function() {
     console.log("Connected to MongoDB database.")
 })
-
-app.use(cors)
 
 app.use(helmet())
 

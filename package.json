@@ -12,6 +12,7 @@
   "author": "BrokenHipRacer andrew@alsberge.email",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.17.1",
     "helmet": "^5.1.1",

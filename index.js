@@ -12,27 +12,24 @@ const app = express()
 
 const mongoString = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@alsbergeblogatlastemp.ickwxsm.mongodb.net/blog?retryWrites=true&w=majority`
 
-mongoose.connect(mongoString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
+mongoose.connect(mongoString, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true})
 
 mongoose.connection.on("error", function(error) {
-    if (process.env.NODE_ENV === "development") {
-        console.log(error)
-    }
+  if (process.env.NODE_ENV === "development") {
+    console.log(error)
+  }
 })
 
 mongoose.connection.on("open", function() {
-    console.log("Connected to MongoDB database.")
+  console.log("Connected to MongoDB database.")
 })
 
 app.use(helmet())
 
-app.use(require("./src/routes/index"))
+app.use(require("./routes/index.js"))
 
 app.use("/assets", express.static(path.join(__dirname, "..", "..", "assets")))
 
 app.listen(PORT, function () {
-    console.log(`Express app listening on port ${PORT}`)
+  console.log(`Express app listening on port ${PORT}`)
 })

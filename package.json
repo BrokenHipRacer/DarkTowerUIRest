@@ -4,25 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ./src --fix",
     "dev": "NODE_ENV=development nodemon index.js",
     "start": "NODE_ENV=production node index.js"
   },
   "keywords": [],
-  "author": "BrokenHipRacer andrew@alsberge.email",
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.0.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "helmet": "^5.1.1",
-    "moment": "^2.29.4",
-    "mongodb": "^4.9.1",
-    "mongoose": "^6.5.2",
-    "showdown": "^2.1.0"
+    "helmet": "^3.22.0",
+    "moment": "^2.25.3",
+    "mongoose": "^5.9.14",
+    "showdown": "^1.9.1"
   },
   "devDependencies": {
-    "eslint": "^8.23.1",
-    "eslint-config-google": "^0.14.0",
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.4"
   }
 }
